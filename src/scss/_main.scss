@@ -9,6 +9,7 @@ body {
   // color: #000;
   font-size: 1.4rem;
   // letter-spacing: 2px;
+  width: 100%;
 }
 *,*::before,*::after {
   box-sizing: border-box;
@@ -17,7 +18,8 @@ body {
 
 }
 #content-wrapper {
-
+  padding: 100px 80px;
+  width: 50%;
 }
 
 // .clearfix::after {
@@ -38,12 +40,46 @@ body {
 // ==================================
 // top(header)
 // ==================================
+.top {
+  position: relative;
+  padding: 100px 80px;
 
+  &-image {
+    margin-top: 50px;
+    width: 800px;
+  }
+}
+.title {
+  
+}
+.header {
 
+  &-1 {
+
+  }
+  &-2 {
+    position: fixed;
+    left: 65%;
+  }
+  &-logo {
+
+  }
+}
+.nav {
+
+  &-list {
+
+  }
+  &-item {
+
+    a {
+
+    }
+  }
+}
 // ==================================
 // about
 // ==================================
-
 
 // ==================================
 // works
