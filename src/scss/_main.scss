@@ -1,4 +1,36 @@
 // ==================================
+// config(初期設定や変数)
+// ==================================
+//415px ~ 768pxまで
+@mixin tb($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+// //0 ~ 414pxまで
+// @mixin mq($breakpoint: sm) {
+//   @media #{map-get($breakpoints, $breakpoint)} {
+//     @content;
+//   }
+// }
+
+// マップ型変数
+$breakpoints: (
+  // 'sm': 'screen and (max-width: 414px)',
+  'md': 'screen and (max-width: 768px)',
+  // 'lg': 'screen and (max-width: 1000px)',
+  // 'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+//メディアクエリーの読み込み方法
+// 0 ~ 768pxのスタイル
+// @include tb() {
+//   display: block;
+// }
+
+
+
+// ==================================
 // base(全体で共通のスタイル)
 // ==================================
 html {
@@ -9,6 +41,7 @@ body {
   // color: #000;
   font-size: 1.4rem;
   // letter-spacing: 2px;
+  width: 100%;
 }
 *,*::before,*::after {
   box-sizing: border-box;
@@ -17,9 +50,12 @@ body {
 
 }
 #content-wrapper {
-
+  padding-left: 80px;
+  width: 100%;
 }
-
+.none {
+  display: none;
+}
 // .clearfix::after {
 //   content: '';
 //   display: block;
@@ -29,33 +65,78 @@ body {
 //   text-decoration: none;
 // }
 
+
 // ==================================
 // parts(ボタン・h2:見出し,h3:小見出し
 // などの何回も使う部品)
 // ==================================
-
+.heading {
+  font-size: 3rem;
+}
 
 // ==================================
 // top(header)
 // ==================================
+.top {
+  position: relative;
+  padding: 100px 80px;
 
+  &-image {
+  
+  }
+}
+.title {
+  
+}
+.header {
 
+  &-1 {
+
+  }
+  &-2 {
+    position: fixed;
+    left: 65%;
+  }
+  &-logo {
+
+  }
+}
+.nav {
+
+  &-list {
+
+  }
+  &-item {
+
+    a {
+
+    }
+  }
+}
 // ==================================
 // about
 // ==================================
-
+.about {
+  width: 50%;
+}
 
 // ==================================
 // works
 // ==================================
-
+.works {
+  width: 50%;
+}
 
 // ==================================
 // contact
 // ==================================
-
+.contact {
+  width: 100%;
+}
 
 // ==================================
 // footer
 // ==================================
+.footer {
 
+}
