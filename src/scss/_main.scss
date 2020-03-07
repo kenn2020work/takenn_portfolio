@@ -40,7 +40,7 @@ body {
   font-family: 'Montserrat',sans-serif ;
   font-size: 1.4rem;
   // color: #000;
-  // letter-spacing: 2px;
+  letter-spacing: 2px;
   width: 100%;
 }
 *,*::before,*::after {
@@ -50,7 +50,7 @@ body {
 
 }
 #content-wrapper {
-  padding-left: 80px;
+  padding: 0 80px;
   width: 100%;
 }
 .none {
@@ -147,12 +147,68 @@ body {
 // contact
 // ==================================
 .contact {
+  padding-top: 80px;
   width: 100%;
+  text-align: center;
+
+  &-box {
+    // padding: 30px 150px 0 75px;
+
+    &__inner {
+      padding-right: 20px;
+    }
+    &__left {
+      display: inline-block;
+      margin-right: 15px;
+    }
+    &__right {
+      display: inline-block;
+    }
+  }
+  &-text {
+    display: block;
+    padding-top: 50px;
+    line-height: 2;
+  }
+  &-myname {
+     margin: 30px 0 5px; 
+     font-size: 1.6rem;
+  }
+  &-email {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    font-size: 2.0rem;
+    &:hover {
+      opacity: 0.5;
+    }
+
+  }
+  &-content {
+
+  }
+}
+.scroll-button {
+  margin: 80px auto 50px;
+  display: block;
+  width: 70px;
+  border-right: 50px solid transparent;
+  border-bottom: 86.6025px solid #b2ce54;
+  border-left: 50px solid transparent;
+    &:hover {
+      opacity: 0.5;
+    }
 }
 
 // ==================================
 // footer
 // ==================================
 .footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 80px;
 
+  p {
+    text-align: center;
+  }
 }
