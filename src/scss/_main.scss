@@ -98,15 +98,17 @@ body {
 // ==================================
 .top {
   position: relative;
-  padding: 40px 0 100px;
+  // padding: 40px 0 100px;
+  padding-bottom: 100px;
 
   &-image {
-    padding-top: 250px;
+    background-image: url("../img/beach.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    margin-top: 50vh; //上半分の領域を確保
   }
-}
-.image {
-  width: 100%;
-  height: 300px;
 }
 .site-title {
   padding-left: 30px;
@@ -114,15 +116,17 @@ body {
 .header {
 
   &-1 {
-
+    position: absolute; //top基準 99行目,top-imageが収まらないので、あえて浮かせる
+    top: -75%;//基準がtop-imageの左上なので、-の値を指定
     > a {
       text-decoration: none;
       color: #000;
     }
   }
   &-2 {
-    position: fixed;
+    position: fixed; //top基準 99行目
     left: 65%;
+    top: 15%;
     @include tb() {
       // display: none;
     }
