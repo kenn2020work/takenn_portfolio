@@ -56,11 +56,11 @@ body {
 .none {
   display: none;
 }
-// .clearfix::after {
-//   content: '';
-//   display: block;
-//   clear: both;
-// }
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
 // a ,a:visited{
 //   text-decoration: none;
 // }
@@ -154,16 +154,35 @@ body {
   width: 100%;
 
   &-box {
+    padding: 30px 150px 0 75px;
 
-    &__left {
+    &__inner {
 
     }
+    &__left {
+      display: inline-block;
+      // float: left;
+    }
     &__right {
-
+      display: inline-block;
+      // float: left;
     }
   }
   &-text {
+    display: block;
+  }
+  &-myname {
+     margin: 10px 0 5px; 
+  }
+  &-email {
+    color: #000;
+    text-decoration: none;
+    font-size: 2.0rem;
+    padding: 10px;
 
+    &:hover {
+      opacity: 0.5;
+    }
   }
 }
 
