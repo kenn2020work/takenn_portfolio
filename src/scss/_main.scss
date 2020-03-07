@@ -52,6 +52,9 @@ body {
 #content-wrapper {
   padding: 0 80px;
   width: 100%;
+  @include tb() {
+    padding: 0 20px;
+  }
 }
 .none {
   display: none;
@@ -120,6 +123,9 @@ body {
   &-2 {
     position: fixed;
     left: 65%;
+    @include tb() {
+      display: none;
+    }
     > a {
       display: block;
       text-align: center;
@@ -242,15 +248,27 @@ body {
     &__left {
       display: inline-block;
       margin-right: 15px;
+      @include tb(){
+        display: block;
+        margin-left: 15px;
+        margin-right: 0;
+      }
     }
     &__right {
       display: inline-block;
+      @include tb(){
+        display: block;
+        margin-left: 15px;
+      }
     }
   }
   &-text {
     display: block;
     padding-top: 50px;
     line-height: 2;
+    @include tb() {
+      font-size: 1.0rem;
+    }
   }
   &-myname {
      margin: 30px 0 5px; 
@@ -261,10 +279,18 @@ body {
     color: #000;
     text-decoration: none;
     font-size: 2.0rem;
+    @include tb() {
+      font-size: 1.2rem;
+    }
+    &__kenn {
+      display: inline-block;
+    }
+    &__take {
+      display: inline-block;
+    }
     &:hover {
       opacity: 0.5;
     }
-
   }
   &-content {
 
@@ -277,9 +303,13 @@ body {
 .footer {
   background-color: #000;
   color: #fff;
-  padding: 20px 80px;
+  // padding: 20px 80px;
+  padding: 20px 0;
 
   p {
     text-align: center;
+    @include tb() {
+      font-size: 1.0rem;
+    }
   }
 }
