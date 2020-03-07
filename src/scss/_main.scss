@@ -124,7 +124,7 @@ body {
     position: fixed;
     left: 65%;
     @include tb() {
-      // display: none;
+      display: none;
     }
     > a {
       display: block;
