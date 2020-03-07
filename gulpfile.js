@@ -43,6 +43,7 @@ const paths = {
 // sassコンパイタスク
 gulp.task('sass', done => {
   gulp.src(paths.src.scss)
+  .pipe(plumber({ errorHandler: notify.onError('Error: &lt;%= error.message %&gt;') }))//watch中にエラーが起きても止まらない
   .pipe(sassGlob()) //importの読み込みを簡潔にする
   .pipe(sass({
     importer: packageImporter({
@@ -53,7 +54,6 @@ gulp.task('sass', done => {
       outputStyle: 'expanded',
     })
     .on('error', sass.logError))
-    .pipe(plumber({ errorHandler: notify.onError('Error: &lt;%= error.message %&gt;') }))//watch中にエラーが起きても止まらない
     .pipe(gulp.dest(paths.dist.css))
     .pipe(cleanCSS())
     .pipe(rename({
