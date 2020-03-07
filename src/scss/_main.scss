@@ -56,11 +56,11 @@ body {
 .none {
   display: none;
 }
-// .clearfix::after {
-//   content: '';
-//   display: block;
-//   clear: both;
-// }
+.clearfix::after {
+   content: '';
+   display: block;
+   clear: both;
+ }
 // a ,a:visited{
 //   text-decoration: none;
 // }
@@ -133,21 +133,75 @@ body {
 // about
 // ==================================
 .about {
-  width: 50%;
+  width: 65%;
+  margin: 0 0 10rem;
+
+  .contents {
+    width: 100%;
+    margin: 3rem 0 0;
+
+    .take {
+      width: 46%;
+      float: left;
+
+      &_name {
+        margin: 2rem 0 0;
+        width: 50%;
+        float: left;
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      img {
+        width: 50%;
+        height: auto;
+        float: right;
+      }
+
+      .intro {
+        padding: 1rem 0 0;
+        font-size: 1.5rem;
+      }
+    }
+
+    .kenn {
+      width: 46%;
+      float: right;
+
+      &_name {
+        margin: 2rem 0 0;
+        width: 50%;
+        float: left;
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      img {
+        width: 50%;
+        height: autp;
+        float: right;
+      }
+
+      .intro {
+        padding: 1rem 0 0;
+        font-size: 1.5rem;
+      }
+    }
+  }
 }
 
 // ==================================
 // works
 // ==================================
 .works {
-  width: 50%;
+  width: 65%;
+  margin: 0 0 10rem;
 }
 
 // ==================================
 // contact
 // ==================================
 .contact {
-  padding-top: 80px;
   width: 100%;
   text-align: center;
 
