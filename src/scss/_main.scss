@@ -89,6 +89,9 @@ body {
     bottom: -5px;
   }
 }
+.scroll-button {
+
+}
 
 // ==================================
 // top(header)
@@ -147,12 +150,30 @@ body {
 // contact
 // ==================================
 .contact {
+  padding-top: 80px;
   width: 100%;
+
+  &-box {
+
+    &__left {
+
+    }
+    &__right {
+
+    }
+  }
+  &-text {
+
+  }
 }
 
 // ==================================
 // footer
 // ==================================
 .footer {
+  padding-top: 80px;
 
+  p {
+    text-align: center;
+  }
 }
