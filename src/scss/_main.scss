@@ -161,6 +161,9 @@ body {
     .take {
       width: 46%;
       float: left;
+      @include tb {
+        width: 100%;
+      }
 
       &_name {
         margin: 2rem 0 0;
@@ -179,12 +182,18 @@ body {
       .intro {
         padding: 1rem 0 0;
         font-size: 1.5rem;
+        display: inline-block;
+        width: 100%;
       }
     }
 
     .kenn {
       width: 46%;
       float: right;
+      @include tb {
+        width: 100%;
+        margin: 3rem 0 0;
+      }
 
       &_name {
         margin: 2rem 0 0;
@@ -222,6 +231,7 @@ body {
 .contact {
   width: 100%;
   text-align: center;
+  margin: 0 0 7rem;
 
   &-box {
     // padding: 30px 150px 0 75px;
@@ -259,17 +269,6 @@ body {
   &-content {
 
   }
-}
-.scroll-button {
-  margin: 80px auto 50px;
-  display: block;
-  width: 70px;
-  border-right: 50px solid transparent;
-  border-bottom: 86.6025px solid #b2ce54;
-  border-left: 50px solid transparent;
-    &:hover {
-      opacity: 0.5;
-    }
 }
 
 // ==================================
