@@ -67,22 +67,23 @@ body {
 // a ,a:visited{
 //   text-decoration: none;
 // }
-
 .contents {
     position: relative;
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
+    height: 50vh;
 }
-
-.line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    width: 0;
-    height: 5px;
-    background: #EC4E20;
+.effect {
+  transition: .7s;
+  transition-delay: .8;
+}
+.effect2 {
+  @extend .effect;
+  transition-delay: .8;
+}
+.effect3 {
+  @extend .effect;
+  transition-delay: .8;
 }
 
 // ==================================
@@ -114,26 +115,25 @@ body {
 // ==================================
 .top {
   position: relative;
-  // padding: 40px 0 100px;
-  padding-bottom: 100px;
+  height: 1000px;
+  margin-bottom: 200px;
 
   &-image {
-    background-image: url("../img/beach.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50vh;
-    margin-top: 50vh; //上半分の領域を確保
+        background-image: url('../../dist/img/beach.jpg');
+        background-size:  100%;
+        width: 100%;
+        height: 500px;
+        margin-top: 50vh;
+        position: fixed;
   }
 }
 .site-title {
-  padding-left: 30px;
+  padding: 30px 50px 0px;
 }
 .header {
-
   &-1 {
-    position: absolute; //top基準 99行目,top-imageが収まらないので、あえて浮かせる
-    top: -75%;//基準がtop-imageの左上なので、-の値を指定
+    position: fixed;
+    top: 5%;//基準がtop-imageの左上なので、-の値を指定
     > a {
       text-decoration: none;
       color: #000;
@@ -259,6 +259,7 @@ body {
   .container {
     margin: 3rem 0 0;
     width: 100%;
+    height: 50vh;
 
     .box-left {
       width: 46%;
@@ -309,6 +310,7 @@ body {
 
     &__inner {
       padding-right: 20px;
+      height: 10vh;
     }
     &__left {
       display: inline-block;
