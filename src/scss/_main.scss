@@ -1,29 +1,29 @@
 // ==================================
 // config(初期設定や変数)
 // ==================================
-//415px ~ 768pxまで
+//560px ~ 960pxまで
 @mixin tb($breakpoint: md) {
   @media #{map-get($breakpoints, $breakpoint)} {
     @content;
   }
 }
-// //0 ~ 414pxまで
-// @mixin mq($breakpoint: sm) {
-//   @media #{map-get($breakpoints, $breakpoint)} {
-//     @content;
-//   }
-// }
+//0 ~ 560pxまで
+  @mixin mq($breakpoint: sm) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+  }
+}
 
 // マップ型変数
 $breakpoints: (
-  // 'sm': 'screen and (max-width: 414px)',
-  'md': 'screen and (max-width: 768px)',
+  'sm': 'screen and (max-width: 560px)',
+  'md': 'screen and (max-width: 960px)',
   // 'lg': 'screen and (max-width: 1000px)',
   // 'xl': 'screen and (max-width: 1200px)',
 ) !default;
 
 //メディアクエリーの読み込み方法
-// 0 ~ 768pxのスタイル
+// 0 ~ 960pxのスタイル
 // @include tb() {
 //   display: block;
 // }
@@ -163,6 +163,9 @@ body {
 .about {
   width: 65%;
   margin: 0 0 10rem;
+  @include mq {
+    width: 100%;
+  }
 
   .contents {
     width: 100%;
@@ -233,6 +236,9 @@ body {
 .works {
   width: 65%;
   margin: 0 0 10rem;
+  @include mq {
+    width: 100%;
+  }
 
   .container {
     margin: 3rem 0 0;
@@ -291,7 +297,7 @@ body {
     &__left {
       display: inline-block;
       margin-right: 15px;
-      @include tb(){
+      @include mq(){
         display: block;
         margin-left: 15px;
         margin-right: 0;
@@ -299,7 +305,7 @@ body {
     }
     &__right {
       display: inline-block;
-      @include tb(){
+      @include mq(){
         display: block;
         margin-left: 15px;
       }
@@ -309,7 +315,7 @@ body {
     display: block;
     padding-top: 50px;
     line-height: 2;
-    @include tb() {
+    @include mq() {
       font-size: 1.0rem;
     }
   }
@@ -322,7 +328,7 @@ body {
     color: #000;
     text-decoration: none;
     font-size: 2.0rem;
-    @include tb() {
+    @include mq() {
       font-size: 1.2rem;
     }
     &__kenn {
