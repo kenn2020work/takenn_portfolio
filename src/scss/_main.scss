@@ -85,7 +85,6 @@ body {
   @extend .effect;
   transition-delay: .8;
 }
-
 // ==================================
 // parts(ボタン・h2:見出し,h3:小見出し
 // などの何回も使う部品)
@@ -169,6 +168,7 @@ body {
   &-list {
     margin-top: 10px;
     text-align: center;
+    position: relative;//scroll-topの相対
   }
   &-item {
     display: inline-block;
@@ -185,6 +185,45 @@ body {
       opacity: 0.5;
     }
   }
+}
+.scroll-top {
+  position: fixed;
+  background: #3f98ef;
+  opacity: 0.6;
+  border-radius: 50%;
+  margin: 100px 0 0 100px;
+  @include mq() {
+    bottom: 50px;
+    right: 6px;
+    margin: 0; 
+  }
+
+  & a {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+  }
+    a:hover {
+      opacity: 0.5;
+    }
+    &::before{
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f102';
+      font-size: 25px;
+      color: #fff;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: -5px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;
+    }
 }
 // sticky-header
 .sticky {
