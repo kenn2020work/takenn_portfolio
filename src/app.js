@@ -24,21 +24,22 @@ $(function () {
         $(function () {
           if (scroll < 500) {
             $(".header-2").removeClass("none");
+            $(".sticky-header").css("display","none");
           } else {
             $(".header-2").addClass("none");
+            $(".sticky-header").removeClass("none");
+            $(".sticky-header").css({
+              'display': 'block',
+              'transition': '0.8s',
+              'transition delay': '0.5s',
+            });
           }
         });
-      } else {
-        
+      } //560px以上
+      else {
+        $(".header-2").removeClass("none");
       }
   });
-
-    //   $(".site-title").removeClass("none");
-    //   // console.log("Scroll：500未満です")
-    // } else {
-    //   $(".site-title").addClass("none");
-    //   // console.log("Scroll：500以上です")
-    // }
 
     //ふわっと現れる1
     $(".effect").each(function () {
