@@ -27,22 +27,6 @@ $breakpoints: (
 // @include tb() {
 //   display: block;
 // }
-// #particles-js {
-//   background: #333;
-//   height: 250px;
-// }
-
-// #particles-js {
-// width: 100%;
-// height: 100%;
-// position: absolute;
-// top: 0;
-// left: 0;
-// right: 0;
-// bottom: 0;
-// display: block;
-// z-index: 0;
-// }
 
 // ==================================
 // base(全体で共通のスタイル)
@@ -56,15 +40,7 @@ body {
   // color: #000;
   letter-spacing: 2px;
   width: 100%;
-  // 背景画像 無限ループ
-  // background-image: url("../img/beach.jpg");
-  // animation: bgiLoop 5s linear infinite;
 }
-// 背景画像 無限ループ
-// @keyframes bgiLoop {
-//   0% { background-position: 0 0;}
-// 100% { background-position: -100px 200px;}
-// }
 *,*::before,*::after {
   box-sizing: border-box;
 }
@@ -86,9 +62,6 @@ body {
    display: block;
    clear: both;
  }
-// a ,a:visited{
-//   text-decoration: none;
-// }
 .contents {
     position: relative;
     width: 100%;
@@ -144,15 +117,6 @@ body {
   @include mq() {
   margin-bottom: 0px;
   }
-
-  &-image {
-    // background-image: url('../../dist/img/beach.jpg');
-    // background-size:  100%;
-    // width: 100%;
-    // height: 500px;
-    // margin-top: 50vh;
-    // position: fixed;
-  }
 }
 #top-image {
     background: #333;
@@ -191,6 +155,9 @@ body {
 }
 .site-title {
   padding: 30px 50px 0px;
+  @include mq(){
+    display: none;
+  }
 }
 .header {
   &-1 {
@@ -206,7 +173,8 @@ body {
     left: 65%;
     top: 15%;
     @include mq() {
-      top: 20%;
+      opacity: 0.75;
+      top: 10%;
       left: 0; //position系 中央寄せのおまじない
       right: 0; //
       margin: 0; //
@@ -232,10 +200,18 @@ body {
     margin: 10px;
     @include tb() {
       display: block;
+      margin: 30px;
+    }
+    @include mq() {
+      // margin: 30px;
     }
     a {
       text-decoration: none;
       color: #000;
+      font-size: 1.8rem;
+      @include tb(){
+      font-size: 1.6rem;
+      }
       // border-bottom: 1px solid red;
     }
     a:hover {
@@ -243,6 +219,7 @@ body {
     }
   }
 }
+//scroll-button
 .scroll-top {
   position: fixed;
   background: #3f98ef;
@@ -524,11 +501,3 @@ body {
     }
   }
 }
-
-// .background {
-//   position: absolute;
-//   display: block;
-//   top: 0;
-//   bottom: 0;
-//   z-index: 0;
-// }
