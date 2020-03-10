@@ -30,6 +30,7 @@ $(function () {
     if (scroll < 500) {
       $(".site-title").removeClass("none");
       scrollTop.css("display","none"); //scrolltopを非表示
+      $("#image-text").css("opacity", "1");
       // console.log("Scroll：500未満です")
     } else {
       $(".site-title").addClass("none");
@@ -37,6 +38,7 @@ $(function () {
         "display": "block",
         "z-index": "10"
       }); //scrolltopを非表示
+      $("#image-text").css("opacity", "0");
       // console.log("Scroll：500以上です")
     }
     
