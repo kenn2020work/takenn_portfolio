@@ -67,7 +67,24 @@ body {
 // a ,a:visited{
 //   text-decoration: none;
 // }
-
+.contents {
+    position: relative;
+    width: 100%;
+    // height: 100vh;
+    height: 50vh;
+}
+.effect {
+  transition: .7s;
+  transition-delay: .8;
+}
+.effect2 {
+  @extend .effect;
+  transition-delay: .8;
+}
+.effect3 {
+  @extend .effect;
+  transition-delay: .8;
+}
 
 // ==================================
 // parts(ボタン・h2:見出し,h3:小見出し
@@ -98,31 +115,34 @@ body {
 // ==================================
 .top {
   position: relative;
-  padding: 40px 0 100px;
+  height: 1000px;
+  margin-bottom: 200px;
 
   &-image {
-    padding-top: 250px;
+        background-image: url('../../dist/img/beach.jpg');
+        background-size:  100%;
+        width: 100%;
+        height: 500px;
+        margin-top: 50vh;
+        position: fixed;
   }
 }
-.image {
-  width: 100%;
-  height: 300px;
-}
 .site-title {
-  padding-left: 30px;
+  padding: 30px 50px 0px;
 }
 .header {
-
   &-1 {
-
+    position: fixed;
+    top: 5%;//基準がtop-imageの左上なので、-の値を指定
     > a {
       text-decoration: none;
       color: #000;
     }
   }
   &-2 {
-    position: fixed;
+    position: fixed; //top基準 99行目
     left: 65%;
+    top: 15%;
     @include tb() {
       // display: none;
     }
@@ -239,6 +259,7 @@ body {
   .container {
     margin: 3rem 0 0;
     width: 100%;
+    height: 50vh;
 
     .box-left {
       width: 46%;
@@ -289,6 +310,7 @@ body {
 
     &__inner {
       padding-right: 20px;
+      height: 10vh;
     }
     &__left {
       display: inline-block;
