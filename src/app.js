@@ -1,6 +1,6 @@
 $(function () {
 
-  //scrollして画像を閉じる
+  //下scrollで画像を閉じる
   $(window).scroll(function () {
     var scroll = $(this).scrollTop();
     // console.log("スクロール量：" + scroll);
@@ -16,6 +16,29 @@ $(function () {
       $(".site-title").addClass("none");
       // console.log("Scroll：500以上です")
     }
+    
+    //画面幅に合わせて
+    jQuery(document).ready(function () {
+      //560px以下
+      if (window.matchMedia('(max-width:560px)').matches) {
+        $(function () {
+          if (scroll < 500) {
+            $(".header-2").removeClass("none");
+          } else {
+            $(".header-2").addClass("none");
+          }
+        });
+      } else {
+        
+      }
+  });
+
+    //   $(".site-title").removeClass("none");
+    //   // console.log("Scroll：500未満です")
+    // } else {
+    //   $(".site-title").addClass("none");
+    //   // console.log("Scroll：500以上です")
+    // }
 
     //ふわっと現れる1
     $(".effect").each(function () {

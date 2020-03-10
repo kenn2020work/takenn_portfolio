@@ -117,6 +117,12 @@ body {
   position: relative;
   height: 1000px;
   margin-bottom: 200px;
+  @include tb() {
+  margin-bottom: 80px;
+  }
+  @include mq() {
+  margin-bottom: 0px;
+  }
 
   &-image {
         background-image: url('../../dist/img/beach.jpg');
@@ -143,8 +149,11 @@ body {
     position: fixed; //top基準 99行目
     left: 65%;
     top: 15%;
-    @include tb() {
-      // display: none;
+    @include mq() {
+      top: 20%;
+      left: 0; //position系 中央寄せのおまじない
+      right: 0; //
+      margin: 0; //
     }
     > a {
       display: block;
@@ -159,10 +168,15 @@ body {
 
   &-list {
     margin-top: 10px;
+    text-align: center;
   }
   &-item {
     display: inline-block;
-    margin-right: 20px;
+    margin: 10px;
+    @include tb() {
+      display: block;
+      margin: 20px;
+    }
     a {
       text-decoration: none;
       color: #000;
