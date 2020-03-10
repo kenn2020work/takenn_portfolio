@@ -366,6 +366,7 @@ body {
       @include tb {
         width: 100%;
         margin: 3rem 0 0;
+        margin-bottom: 10rem; //応急処置
       }
 
       &_name {
@@ -406,7 +407,7 @@ body {
     height: 50vh;
 
     .box-left {
-      width: 46%;
+      width: 50%;
       float: left;
       @include tb {
         width: 100%;
@@ -414,7 +415,7 @@ body {
     }
 
     .box-right {
-      width: 46%;
+      width: 50%;
       float: right;
       @include tb {
         width: 100%;
@@ -423,14 +424,25 @@ body {
 
     .box {
       margin: 0 0 6rem;
+
       p {
         text-align: center;
-        img {
-          background-color: blue;
-          width: 100%;
-          margin: 0 auto 2rem;
-          display: block;
+
+        a {
+
+          img {
+            display: block;
+            width: auto;
+            height: 50rem;
+            margin: 0 auto 2rem;
+            opacity: 1;
+
+            &:hover {
+              opacity: 0.7;
+            }
+          }
         }
+
         span {
           margin: 1rem 0 0;
           text-align: right;
