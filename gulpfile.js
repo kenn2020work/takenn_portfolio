@@ -90,5 +90,5 @@ gulp.task('watch', function (done) {
 
 //npx gulpと打ち込んだ時に行う処理
 // gulp.task('default', gulp.series(gulp.parallel('serve','watch')));
-// gulp.task('default', gulp.series(gulp.parallel('serve','sass','bundle.js','watch')));
-gulp.task('default', gulp.series(gulp.parallel('serve','sass','bundle.js','watch','imagemin')));
+gulp.task('default', gulp.series(gulp.parallel('serve','sass','bundle.js','watch')));
+// gulp.task('default', gulp.series(gulp.parallel('serve','sass','bundle.js','watch','imagemin')));

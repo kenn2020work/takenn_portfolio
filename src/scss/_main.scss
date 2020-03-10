@@ -85,7 +85,6 @@ body {
   @extend .effect;
   transition-delay: .8;
 }
-
 // ==================================
 // parts(ボタン・h2:見出し,h3:小見出し
 // などの何回も使う部品)
@@ -117,6 +116,12 @@ body {
   position: relative;
   height: 1000px;
   margin-bottom: 200px;
+  @include tb() {
+  margin-bottom: 80px;
+  }
+  @include mq() {
+  margin-bottom: 0px;
+  }
 
   &-image {
         background-image: url('../../dist/img/beach.jpg');
@@ -143,8 +148,11 @@ body {
     position: fixed; //top基準 99行目
     left: 65%;
     top: 15%;
-    @include tb() {
-      // display: none;
+    @include mq() {
+      top: 20%;
+      left: 0; //position系 中央寄せのおまじない
+      right: 0; //
+      margin: 0; //
     }
     > a {
       display: block;
@@ -159,19 +167,95 @@ body {
 
   &-list {
     margin-top: 10px;
+    text-align: center;
+    position: relative;//scroll-topの相対
   }
   &-item {
     display: inline-block;
-    margin-right: 20px;
+    margin: 10px;
+    @include tb() {
+      display: block;
+    }
     a {
       text-decoration: none;
       color: #000;
-      border-bottom: 1px solid red;
+      // border-bottom: 1px solid red;
     }
     a:hover {
       opacity: 0.5;
     }
   }
+}
+.scroll-top {
+  position: fixed;
+  background: #3f98ef;
+  opacity: 0.6;
+  border-radius: 50%;
+  margin: 100px 0 0 100px;
+  @include mq() {
+    bottom: 50px;
+    right: 6px;
+    margin: 0; 
+  }
+
+  & a {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+  }
+    a:hover {
+      opacity: 0.5;
+    }
+    &::before{
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f102';
+      font-size: 25px;
+      color: #fff;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: -5px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center;
+    }
+}
+// sticky-header
+.sticky {
+   &-header {
+      display: none;
+      @include mq() {
+        // display: block;
+        position: fixed;
+        width: 100%;
+        height: 50px;
+        z-index: 100;
+        transition: 0.25s;
+        background-color: rgba(0,0,0,0.60);
+      }
+   }
+    &-nav {
+      text-align: center;
+    }
+    &-menu {
+      padding-top: 10px;
+    }
+    &-item {
+      display: inline-block;
+      margin: 10px;
+      
+      & a {
+        color: #fff;
+      }
+      & a:hover {
+        opacity: 0.5;
+      }
+    }
 }
 // ==================================
 // about
