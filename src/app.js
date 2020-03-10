@@ -81,11 +81,7 @@ $(function () {
     //ふわっと現れる2
     $(".effect2").each(function () {
       var imgPos = $(this).offset().top;
-      // var scroll = $(this).scrollTop();
       var windowHeight = $(window).height();
-      // console.log("imgPos:" + imgPos);
-      // console.log("scroll:" + scroll);
-      // console.log("windowHeight:" + windowHeight);
       if (scroll > imgPos - windowHeight * 0.7) {
         $(".effect2").css("opacity", "1");
       } else {
@@ -96,11 +92,7 @@ $(function () {
         //ふわっと現れる3
         $(".effect3").each(function () {
           var imgPos = $(this).offset().top;
-          // var scroll = $(this).scrollTop();
           var windowHeight = $(window).height();
-          // console.log("imgPos:" + imgPos);
-          // console.log("scroll:" + scroll);
-          // console.log("windowHeight:" + windowHeight);
           if (scroll > imgPos - windowHeight * 0.9 ) {
             $(".effect3").css("opacity", "1");
           } else {
