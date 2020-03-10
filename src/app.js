@@ -1,5 +1,16 @@
 $(function () {
 
+    //文字を1文字ずつ表示
+    var $allMsg = $('#image-text');
+    var $wordList = $('#image-text').html().split("");
+    $('#image-text').html("");
+    $.each($wordList, function(idx, elem) {
+        var newEL = $("<span/>").text(elem).css({ opacity: 0 });
+        newEL.appendTo($allMsg);
+        newEL.delay(idx * 70);
+        newEL.animate({ opacity: 1 }, 1100);
+    });
+
   //scroll-top
   var topScroll = $('.scroll-top');
   topScroll.click(function () {
@@ -12,7 +23,7 @@ $(function () {
     var scroll = $(this).scrollTop();
     var scrollTop = $('.scroll-top');
     // console.log("スクロール量：" + scroll);
-    $(".top-image").css({
+    $("#top-image").css({
       height: 500 - scroll
     });
     //scrollして画像が0pxになった時にdisplay: none;にする

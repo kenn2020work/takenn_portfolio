@@ -10,6 +10,9 @@
 </head>
 <body>
 
+  <!-- <a href="https://tipsy.github.io/bubbly-bg/">Website</a> -->
+
+ <canvas class="background"></canvas>
 
 <div id="wrapper">
   <!-- top(header) -->
@@ -48,7 +51,9 @@
     </header>
 
     <!-- bg-top-image -->
-      <div class="top-image">
+      <div id="top-image">
+        <h1 id="image-text">would I want to do what I am about to do today?</h1>
+        <!-- <h1 class="image-text2">what I am about to do today?</h1> -->
       </div>
 
   </div>
@@ -146,7 +151,18 @@
 
   <!-- js -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
 <!-- <script src="./dist/js/bundle.js"></script> -->
 <script src="./src/app.js"></script>
+<script src="./src/set.js"></script>
+<script>
+var particles = Particles.init({
+  selector: '.background',
+  sizeVariations: 10,
+  color: ['#00bbdd', '#404B69', '#DBEDF3'],
+  connectParticles: true
+});
+</script>
 </body>
 </html>
