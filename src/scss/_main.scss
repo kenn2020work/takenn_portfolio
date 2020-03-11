@@ -105,6 +105,7 @@ body {
 // ==================================
 .heading {
   width: 100%;
+  margin: 0 0 5rem;
 }
 h2 {
   position: relative;
@@ -310,19 +311,19 @@ h2 {
 // ==================================
 .about {
   width: 65%;
+  margin: 0 0 10rem;
   @include mq {
     width: 100%;
   }
 
   .contents {
     width: 100%;
-    margin: 3rem 0 0;
-
     .take {
       width: 46%;
       float: left;
       @include tb {
         width: 100%;
+        margin: 0 0 5rem;
       }
 
       &_name {
@@ -352,8 +353,6 @@ h2 {
       float: right;
       @include tb {
         width: 100%;
-        margin: 3rem 0 0;
-        margin-bottom: 10rem; //応急処置
       }
 
       &_name {
@@ -389,9 +388,7 @@ h2 {
   }
 
   .container {
-    margin: 3rem 0 0;
     width: 100%;
-    height: 50vh;
 
     .box-left {
       width: 50%;
@@ -410,7 +407,8 @@ h2 {
     }
 
     .box {
-      margin: 0 0 6rem;
+      margin: 0 0 5rem;
+      border: solid 1px black;
 
       p {
         text-align: center;
@@ -431,7 +429,7 @@ h2 {
         }
 
         span {
-          margin: 1rem 0 0;
+          margin: 1rem 3rem 0 0;
           text-align: right;
           display: block;
         }
@@ -448,7 +446,6 @@ h2 {
   text-align: center;
 
   &-box {
-    // padding: 30px 150px 0 75px;
 
     &__inner {
       padding-right: 20px;
@@ -473,7 +470,6 @@ h2 {
   }
   &-text {
     display: block;
-    padding-top: 50px;
     line-height: 2;
     @include mq() {
       font-size: 1.0rem;
