@@ -149,30 +149,45 @@ h2 {
     height: 500px;
     margin-top: 50vh;
     position: fixed;
+    //image-text gradation
+    text-transform: uppercase;//大文字
+    letter-spacing: 1.2rem;
+    display: inline-block;;
 }
 #image-text {
   font-size: 6.0rem; 
   text-align: center;
-  padding: 100px;
+  padding: 50px;
   line-height: 3.0;
   z-index: 1;
-  color: #fff;
-  @include tb() {
-  font-size: 4.0rem; 
-  }
-  @include mq() {
-  padding: 30px;
-  font-size: 2.4rem; 
-  line-height: 3.0;
-  }
+  //image-text gradation
+  position: absolute;
+  /* Clip Background Image */
+    background: url(http://f.cl.ly/items/010q3E1u3p2Q0j1L1S1o/animated_text_fill.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+  /* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
+  /* Activate hardware acceleration for smoother animations */
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+    @include tb() {
+    font-size: 4.0rem; 
+    }
+    @include mq() {
+    padding: 20px;
+    font-size: 2.0rem; 
+    line-height: 3.0;
+    }
 }
-.site-title {
-  padding: 30px 50px 0px;
-  font-size: 2.0rem;
-  @include mq(){
-    display: none;
+  /* Animate Background Image */
+  @-webkit-keyframes aitf {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
   }
-}
+
 .header {
   &-1 {
     position: fixed;

@@ -28,6 +28,9 @@ $(function () {
     $("#top-image").css({
       height: 500 - scroll
     });
+    $("#image-text").css({
+      height: 500 - scroll
+    });
     //scrollして画像が0pxになった時にdisplay: none;
     if (scroll < 500) {
       $(".site-title").removeClass("none");
