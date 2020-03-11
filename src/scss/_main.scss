@@ -258,16 +258,19 @@ h2 {
 //scroll-button
 .scroll-top {
   position: fixed;
-  background: #3f98ef;
+  background: transparent;
   border-radius: 50%;
   margin: 100px 0 0 100px; //refactor必要
+  opacity: 0.7;
+  color: darkturquoise;
   @include mq() {
     bottom: 50px;
     right: 6px;
     margin: 0; 
   }
   &:hover {
-    opacity: 0.7;
+    color: white;
+    background-color: darkturquoise;
   }
   &  a {
     position: relative;
@@ -281,7 +284,6 @@ h2 {
     font-weight: 900;
     content: '\f102';
     font-size: 25px;
-    color: #fff;
     position: absolute;
     width: 25px;
     height: 25px;
