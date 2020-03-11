@@ -11,26 +11,28 @@ $(function () {
         newEL.animate({ opacity: 1 }, 1100);
     });
 
-  //scroll-top
+  //scroll-top Button
   var topScroll = $('.scroll-top');
   topScroll.click(function () {
     $('body, html').animate({ scrollTop: 0 }, 500);
     return false;
   });
 
-  //下scrollで画像を閉じる
+  //下へscrollで画像を閉じる
   $(window).scroll(function () {
     var scroll = $(this).scrollTop();
     var scrollTop = $('.scroll-top');
     // console.log("スクロール量：" + scroll);
+
+    //top-imageの高さをスクロール量減らしていく
     $("#top-image").css({
       height: 500 - scroll
     });
-    //scrollして画像が0pxになった時にdisplay: none;にする
+    //scrollして画像が0pxになった時にdisplay: none;
     if (scroll < 500) {
       $(".site-title").removeClass("none");
       scrollTop.css("display","none"); //scrolltopを非表示
-      $("#image-text").css("opacity", "1");
+      $("#image-text").css("display", "block");
       // console.log("Scroll：500未満です")
     } else {
       $(".site-title").addClass("none");
@@ -38,13 +40,13 @@ $(function () {
         "display": "block",
         "z-index": "10"
       }); //scrolltopを非表示
-      $("#image-text").css("opacity", "0");
+      $("#image-text").css("display", "none");
       // console.log("Scroll：500以上です")
     }
     
     //画面幅に合わせた処理
     jQuery(document).ready(function () {
-      // scrollTop.hide();
+
       //画面幅:560px以下
       if (window.matchMedia('(max-width:560px)').matches) {
         $(function () {
@@ -54,7 +56,8 @@ $(function () {
             $(".header-logo").removeClass("none");
             $(".nav-list").removeClass("none");
             $(".sticky-header").css("display","none");
-          } //scroll量が500以上
+          }
+          //scroll量が500以上
           else {
             // $(".header-2").addClass("none");
             $(".header-logo").addClass("none");
@@ -81,13 +84,19 @@ $(function () {
       var imgPos = $(this).offset().top;
       // var scroll = $(this).scrollTop();
       var windowHeight = $(window).height();
-      // console.log("imgPos:" + imgPos);
-      // console.log("scroll:" + scroll);
-      // console.log("windowHeight:" + windowHeight);
+      console.log("imgPos:" + imgPos);
+      console.log("scroll:" + scroll);
+      console.log("windowHeight:" + windowHeight);
       if (scroll > imgPos - windowHeight + windowHeight / 2 ) {
         $(".effect").css("opacity", "1");
-      } else {
+        // $(".1").addClass("active");
+      }
+      // else if (scroll > imgPos) {
+      //   $(".1").css("border","none");
+      // }
+      else {
         $(".effect").css("opacity", "0");
+        $(".1").removeClass("active");
       }
     });
 
