@@ -37,7 +37,6 @@ const paths = {
   },
   'dist': {
     'css': './dist/css/',
-    'css_min': './dist/css_min/',
     'js': './dist/js/',
   }
 };
@@ -60,7 +59,7 @@ gulp.task('sass', done => {
     .pipe(rename({
       suffix: '.min',
      }))
-    .pipe(gulp.dest(paths.dist.css_min));
+    .pipe(gulp.dest(paths.dist.css));
     done();
 });
 
